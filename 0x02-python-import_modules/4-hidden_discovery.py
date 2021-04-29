@@ -3,6 +3,7 @@
 import hidden_4
 
 if __name__ = "__main__":
-    for name in dir(hidden_4):
-        if name[0] != '_':
-            print("{}".format(name))
+    names = dir(hidden_4)
+    for nh in names:
+        if nh.find("_") != 0:
+            print(nh)

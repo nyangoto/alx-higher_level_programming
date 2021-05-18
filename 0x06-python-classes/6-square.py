@@ -76,22 +76,13 @@ class Square:
         """
         return self.__size ** 2
 
-    def my_sprint(self):
-        """Returns string representation of this square."""
-        ret = ""
-        if not self.size:
-            return "\n"
-
-        for i in range(self.position[1]):
-            ret += "\n"
-        for i in range(self.size):
-            for j in range(self.position[0]):
-                ret += " "
-            for j in range(self.size):
-                ret += "#"
-            ret += "\n"
-        return ret
-
     def my_print(self):
-        """Prints this square"""
-        print(self.my_sprint(), end="")
+        """Prints square with char #"""
+        if self.__size == 0:
+            print()
+        else:
+            i, j = 0, 0
+            for i in range(self.__position[1]):
+                print()
+            for j in range(self.__size):
+                print("{}{}".format(" " * self.__position[0], "#" * self.__size))

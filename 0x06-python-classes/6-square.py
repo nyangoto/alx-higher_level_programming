@@ -4,6 +4,7 @@
 
 class Square:
     """Defines a square."""
+
     def __str__(self):
         """String representation constructor of this square"""
         self.my_print()
@@ -15,8 +16,8 @@ class Square:
             size: length of side of the square.
             position: position of the square
         """
-        self.size = size
-        slef.position = position
+        self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -63,7 +64,8 @@ class Square:
     def my_sprint(self):
         """Returns string representation of this square."""
         ret = ""
-        if not self.size return "\n"
+        if not self.size:
+            return "\n"
 
         for i in range(self.position[1]):
             ret += "\n"

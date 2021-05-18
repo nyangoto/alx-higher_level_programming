@@ -13,9 +13,14 @@ class Square:
         """Constructor.
 
         Args:
-            size: length of side of the square.
-            position: position of the square
+            size(int): length of side of the square.
+            position(int tuple): position of the square
         """
+        if not (isinstance(size, int)):
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+
         self.__size = size
         self.__position = position
 
@@ -31,7 +36,11 @@ class Square:
 
     @size.setter
     def size(self, value):
-        if not isinstance(value, int):
+        """setter function for private attribute size.
+           Args:
+                value: size value to set to.
+        """
+        if not (isinstance(value, int)):
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
@@ -48,10 +57,16 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if not isinstance(value, tuple) or len(value) != 2 or \
-         len([x for x in value if isinstance(x, int) and x >= 0]) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
+        """setter function for private attribute position
+           Args:
+                value: position value to set to.
+        """
+        if isinstance(value, tuple) and len(value) == 2:
+            if isinstance(value[0], int) and isinstance(value[1], int):
+                if value[0] >= 0 and value [1] >= 0:
+                    self.__position = value
+        else:
+            raise TypeError("position must be tuple of 2 positive integers")
 
     def area(self):
         """Area of the square.

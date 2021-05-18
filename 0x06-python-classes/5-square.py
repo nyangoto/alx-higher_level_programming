@@ -11,6 +11,10 @@ class Square:
         Args:
             size: length of side of the square.
         """
+        if not (isinstance(size, int)):
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
         self.__size = size
 
     @property
@@ -25,7 +29,13 @@ class Square:
 
     @size.setter
     def size(self, value):
-        if not isinstance(value, int):
+        """ setter function for private attribute size
+            Args:
+                value: value to be set.
+            Returns:
+                nothing.
+        """
+        if not (isinstance(value, int)):
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
@@ -43,5 +53,5 @@ class Square:
         """Prints the square"""
         for i in range(self.size):
             for j in range(self.size):
-                print("#", end="\n" if j is self.size - 1 and i !=j else "")
+                print("#", end="\n" if j is self.size - 1 and i != j else "")
         print()

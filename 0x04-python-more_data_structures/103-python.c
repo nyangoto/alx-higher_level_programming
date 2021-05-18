@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <Python.h>
+#include <string.h>
 
 /**
 * print_python_bytes - prints info about python lists.

@@ -6,7 +6,7 @@ Contains definition of class Reactangle that inherits from BaseGeometry.
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
-class Rectangle(Basegeometry):
+class Rectangle(BaseGeometry):
     """Defnifition of class Rectangle that inherits from BaseGeometry.
        Attributes:
             width (int): width of the rectangle.

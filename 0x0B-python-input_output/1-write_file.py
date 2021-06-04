@@ -4,7 +4,7 @@ Module for write_file method.
 """
 
 
-def write_file(filename="", text="")
+def write_file(filename="", text=""):
     """write_file writes a string to a text file.
     Args:
         filename (str): name of file.
@@ -13,5 +13,5 @@ def write_file(filename="", text="")
     Return: number of bytes written.
 
     """
-    with open(filename, "w", encoding='utf-8') as a_file:
-        return a_file.write(text)
+    with open(filename, mode="w", encoding="UTF-8") as f:
+        return (f.write(text))

@@ -9,6 +9,6 @@ def read_file(filename=""):
     Reads text file and prints to STDOUT
     """
 
-    with open(filename, encoding="UTF-8") as f:
+    with open(filename, mode="r", encoding="UTF-8") as f:
         for line in f:
             print(line, end="")
